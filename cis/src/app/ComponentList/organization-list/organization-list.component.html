@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body shadow p-3">
+            <h5 class="card-title">Organization List:</h5>
+            <!-- Button visible only for admin -->
+            <nav class="navbar navbar-light">
+                <div class="container">
+                  <button *ngIf="isAdmin" type="button" class="btn btn-secondary mb-3">
+                    <a class="text-light" href="#" routerLink="/addOrganization" routerLinkActive="active">
+                      <i class="fa-solid fa-circle-plus me-1"></i>Add New
+                    </a>
+                  </button>
+                  <form class="d-flex" (submit)="onSearch($event)">
+                    <input [(ngModel)]="searchQuery" name="searchQuery" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-info" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+                </div>
+              </nav>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-info text-center">
+                        <tr>
+                            <th scope="col">Company Id</th>
+                            <th scope="col">Company Name</th>
+                            <th scope="col">Company Email</th>
+                            <th *ngIf="isAdmin" scope="col">Edit</th>
+                            <th *ngIf="isAdmin" scope="col">Delete</th>
+                            <th scope="col">View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let org of searchResults">
+                            <td>{{ org.organizationCode }}</td>
+                            <td>{{ org.organizationName }}</td>
+                            <td>{{ org.email }}</td>
+                            <td class="text-center" *ngIf="isAdmin">
+                                <button (click)="updateOrganizationInfo(org.organizationCode)" class="btn ml-2">
+                                    <img src="/assets/edit.png" alt="" >
+                                </button>
+                            </td>
+                            <td class="text-center" *ngIf="isAdmin">
+                                <button (click)="deleteOrganizationInformation(org.organizationCode)" class="btn ml-2">
+                                    <img src="/assets/delete.png" alt="" >
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                <button (click)="ViewAllOrganizationInformation(org.organizationCode)" class="btn ml-2">
+                                    <img src="/assets/research.png" alt="" >
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

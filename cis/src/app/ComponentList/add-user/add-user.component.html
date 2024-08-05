@@ -1,0 +1,59 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="container mt-2">
+    <h2 class="text-center">User Registration</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Name" [(ngModel)]="userDetail.name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email Address" [(ngModel)]="userDetail.emailId" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password" [(ngModel)]="userDetail.password" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter Address" [(ngModel)]="userDetail.address" name="address">
+                </div>
+                <div class="mb-3">
+                    <label for="mobile" class="form-label">Mobile Number</label>
+                    <input type="text" class="form-control" id="mobile" placeholder="Enter Mobile Number" [(ngModel)]="userDetail.mobile" name="mobile">
+                </div>
+                <div class="mb-3">
+                    <label for="telephone" class="form-label">Telephone Number</label>
+                    <input type="text" class="form-control" id="telephone" placeholder="Enter Telephone Number" [(ngModel)]="userDetail.telephone" name="telephone">
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="active" class="form-label">Active:</label>
+                    <input type="radio" name="active" id="admin" [(ngModel)]="userDetail.role" value="yes"> admin 
+                    <input type="radio" name="active" id="user" [(ngModel)]="userDetail.role" value="no"> user
+                </div>  -->
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Register</button> &nbsp;&nbsp;
+            <button type="submit"  class="btn btn-info" routerLink="/userDetails" routerLinkActive="active">Back</button>
+        </div>
+        <div class="card" >
+            <div class="overlay" *ngIf = "show">
+            <div class="content" style="background-color:rgb(236, 231, 231);">
+               <img src="/assets/success.jpg" alt="">
+               <h2 style="text-align: center;">Thank You!</h2> 
+                <p>Your details has been Successfully <br>Submitted.Thanks!</p>
+                 <button style="display: flex; justify-content: center;"  routerLink="/userDetails"  routerLinkActive="active"  class="nav-link"  class="btn btn-success" (click)="show = false">OK</button>
+                    </div>
+            </div>
+        </div>
+    </form>
+</div>

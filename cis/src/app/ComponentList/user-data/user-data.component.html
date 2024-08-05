@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <button type="submit"  class="btn btn-info" routerLink="/userDetails" routerLinkActive="active"><i class="fa-solid fa-left-long"></i></button>
+            <h3 class="card-title">View UserDetails</h3>
+            <div class="user-details-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="text-center">User Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>User MemberId:</b></td>
+                            <td>{{UserDetail.memberId}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>User Name:</b></td>
+                            <td>{{UserDetail.name}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>User Email:</b></td>
+                            <td>{{UserDetail.emailId}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>User Address:</b></td>
+                            <td>{{UserDetail.address}}</td>
+                        </tr>
+                        <tr *ngIf="isAdmin">
+                            <td><b>User Password:</b></td>
+                            <td>{{UserDetail.password}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>User Dept:</b></td>
+                            <td>{{UserDetail.mobile}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>User Phone:</b></td>
+                            <td>{{UserDetail.telephone}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>User role:</b></td>
+                            <td>{{UserDetail.role}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div><button class="btn" type="button"><img src="/assets/undo.png" alt=""></button></div> -->
+        </div>
+    </div>
+</div>

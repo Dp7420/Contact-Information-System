@@ -1,0 +1,79 @@
+ <div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <button class="btn btn-primary mt-2" type="button" routerLink="/cardList" routerLinkActive="active"><i class="fa-solid fa-left-long"></i></button>
+            <h3 class="card-title">View Card Details</h3>
+            <div class="user-details-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="text-center">Card Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Card Id:</b></td>
+                            <td>{{cardDetails.cardId}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Card Name:</b></td>
+                            <td>{{cardDetails.name}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Card type:</b></td>
+                            <td>{{cardDetails.cardType}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Company Name:</b></td>
+                            <td>{{cardDetails.companyName}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Card Email:</b></td>
+                            <td>{{cardDetails.emaiId}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Card Address:</b></td>
+                            <td>{{cardDetails.address}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Card Mobile:</b></td>
+                            <td>{{cardDetails.mobileNumber}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Card Designation:</b></td>
+                            <td>{{cardDetails.designation}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Card Department:</b></td>
+                            <td>{{cardDetails.department}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Residential Numbert:</b></td>
+                            <td>{{cardDetails.residentialNumber}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Fax:</b></td>
+                            <td>{{cardDetails.fax}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Office Email Id:</b></td>
+                            <td>{{cardDetails.officeEmailId}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Office Web Site:</b></td>
+                            <td>{{cardDetails.officeWebSite}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Branches:</b></td>
+                            <td>{{cardDetails.branches}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Partner:</b></td>
+                            <td>{{cardDetails.partner}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

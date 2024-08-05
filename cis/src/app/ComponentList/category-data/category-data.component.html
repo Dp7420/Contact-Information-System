@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <button type="submit"  class="btn btn-info" routerLink="/categoryList" routerLinkActive="active"><i class="fa-solid fa-left-long"></i></button>
+            <h3 class="card-title">View Category Data</h3>
+            <div class="user-details-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="text-center">Category Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Category Id:</b></td>
+                            <td>{{categories.categoryId}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Cotegory Name:</b></td>
+                            <td>{{categories.categoryName}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Category ShortName:</b></td>
+                            <td>{{categories.shortName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

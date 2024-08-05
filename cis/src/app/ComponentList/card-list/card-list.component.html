@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body shadow p-3">
+            <h5 class="card-title">VisitingCard Details:</h5>
+            <!-- Button visible only for admin -->
+            <nav class="navbar navbar-light">
+                <div class="container">
+                  <button *ngIf="isAdmin" type="button" class="btn btn-secondary mb-3">
+                    <a class="text-light" href="#" routerLink="/addCard" routerLinkActive="active">
+                      <i class="fa-solid fa-circle-plus me-1"></i>Add New
+                    </a>
+                  </button>
+                  <form class="d-flex" (submit)="onSearch($event)">
+                    <input [(ngModel)]="searchQuery" name="searchQuery" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-info" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+                </div>
+              </nav>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-info text-center">
+                        <tr>
+                            <th scope="col">Card Name</th>
+                            <th scope="col">Card Mobile</th>
+                            <th scope="col">Card Email</th>
+                            <th scope="col">Category</th>
+                            <th *ngIf="isAdmin" scope="col">Edit</th>
+                            <th *ngIf="isAdmin" scope="col">Delete</th>
+                            <th scope="col">View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cardDetails of searchResult">
+                            <td>{{ cardDetails.name}}</td>
+                            <td>{{ cardDetails.mobileNumber }}</td>
+                            <td>{{ cardDetails.emaiId }}</td>
+                            <td>{{ cardDetails.categories?.categoryName}}</td>
+                            <td class="text-center" *ngIf="isAdmin">
+                                <button (click)="updateCard(cardDetails.cardId)" class="btn ml-2" >
+                                    <!-- <i class="fa-solid fa-pen-to-square"></i>  -->
+                                    <img src="/assets/edit.png" alt="" >
+                                </button>
+                            </td>
+                            <td class="text-center" *ngIf="isAdmin">
+                                <button (click)="deleteCard(cardDetails.cardId)" class="btn ml-2">
+                                    <!-- <i class="fa-solid fa-trash"></i>  -->
+                                    <img src="/assets/delete.png" alt=""  >
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                <button (click)="cardDetailss(cardDetails.cardId)" class="btn ml-2">
+                                    <!-- <i class="fa-regular fa-eye-slash"></i> -->
+                                    <img src="/assets/research.png" alt="" >
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
