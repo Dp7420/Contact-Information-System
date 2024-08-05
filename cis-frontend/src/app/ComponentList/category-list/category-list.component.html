@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+    <div class="card shadow p-3 border">
+        <div class="card-body">
+            <h5 class="card-title">Categories List</h5>
+            <nav class="navbar navbar-light">
+                <div class="container">
+                  <button *ngIf="isAdmin" type="button" class="btn btn-secondary mb-3">
+                    <a class="text-light" href="#" routerLink="/addCategory" routerLinkActive="active">
+                      <i class="fa-solid fa-circle-plus me-1"></i>Add New
+                    </a>
+                  </button>
+                  <form class="d-flex" (submit)="onSearch($event)">
+                    <input [(ngModel)]="searchQuery" name="searchQuery" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-info" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+                </div>
+              </nav>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-info text-center">
+                        <tr>
+                            <th scope="col">Category Id</th>
+                            <th scope="col">Category Name</th>
+                            <th scope="col">Category ShortName</th>
+                            <th *ngIf="isAdmin" scope="col">Edit</th>
+                            <th *ngIf="isAdmin" scope="col">Delete</th>
+                            <th scope="col">View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let category of searchResults paginatedCategories">
+                            <td>{{ category.categoryId }}</td>
+                            <td>{{ category.categoryName }}</td>
+                            <td>{{ category.shortName }}</td>
+                            <td class="text-center" *ngIf="isAdmin">
+                                <button (click)="updateCategory(category.categoryId)" class="btn ml-2">
+                                    <img src="/assets/edit.png" alt="" >
+                                </button>
+                            </td>
+                            <td class="text-center" *ngIf="isAdmin">
+                                <button (click)="deleteCategory(category.categoryId)" class="btn ml-2">
+                                    <img src="/assets/delete.png" alt="" >
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                <button (click)="categoriesDataView(category.categoryId)" class="btn ml-2">
+                                    <img src="/assets/research.png" alt="" >
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="border-top py-3 px-3 d-flex align-items-center">
+                <button class="btn btn-sm btn-white mb-0" [disabled]="currentPage === 1" (click)="previousPage()">Previous</button>
+                <nav aria-label="..." class="ms-auto">
+                  <ul class="pagination pagination-light mb-0">
+                    <li *ngFor="let page of totalPagesArray; let i = index" class="page-item" [class.active]="currentPage === i + 1" (click)="goToPage(i + 1)">
+                      <a class="page-link border-0 font-weight-bold" href="javascript:;">{{ i + 1 }}</a>
+                    </li>
+                  </ul>
+                </nav>
+                <button class="btn btn-sm btn-white mb-0 ms-auto" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+              </div>
+            </div>
+    </div>
+</div>
+<!-- <gfyrufhyfe></gfyrufhyfe> -->

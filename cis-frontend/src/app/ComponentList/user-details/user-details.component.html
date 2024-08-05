@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="card mt-4">
+    <div class="card-body shadow p-3">
+      <h5 class="card-title">Users List:</h5>
+      <!-- Button visible only for admin -->
+      <nav class="navbar navbar-light">
+        <div class="container">
+          <button *ngIf="isAdmin" type="button" class="btn btn-secondary mb-3">
+            <a class="text-light" href="#" routerLink="/addUser" routerLinkActive="active">
+              <i class="fa-solid fa-circle-plus me-1"></i>Add New
+            </a>
+          </button>
+          <form class="d-flex" (submit)="onSearch($event)">
+            <input [(ngModel)]="searchQuery" name="searchQuery" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-info" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+      </nav>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="table-info text-center">
+            <tr>
+              <th>Full Name</th>
+              <th>Email ID</th>
+              <th>Phone Number</th>
+              <th *ngIf="isAdmin">Edit</th>
+              <th *ngIf="isAdmin">Delete</th>
+              <th>View</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let userDetails of searchResults">
+              <td>{{ userDetails.name }}</td>
+              <td>{{ userDetails.emailId }}</td>
+              <td>{{ userDetails.mobile }}</td>
+              <td class="text-center" *ngIf="isAdmin">
+                <button (click)="updateUser(userDetails.memberId)" class="btn ml-2">
+                    <img src="/assets/edit.png" alt="Edit">
+                </button>
+              </td>
+              <td class="text-center" *ngIf="isAdmin">
+                <button (click)="deleteUser(userDetails.memberId)" class="btn ml-2">
+                    <img src="/assets/delete.png" alt="Delete">
+                </button>
+              </td>
+              <td class="text-center">
+                <button (click)="UserDataView(userDetails.memberId)" class="btn ml-2">
+                    <img src="/assets/research.png" alt="View">
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>
+

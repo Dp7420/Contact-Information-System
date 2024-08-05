@@ -1,0 +1,44 @@
+
+<body style="background-image: url(assets/bg2.jpg); background-size: cover;">
+    <div class="container position-relative position-absolute top-50 start-0 translate-middle-y" style="margin-left: -15%;">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="card h-100" style="position: relative; bottom: 100px;">
+              <div class="card-header">
+                <h3 class="text-center">User Login</h3>
+              </div>
+              <div class="card-body">
+                <form [formGroup] = "regForm">
+                  <div class="form-group mb-2">
+                    <label for="user-username">Username</label>
+                    <input type="text" class="form-control" id="user-username" formControlName="uname" name="emailId" placeholder="Enter username" [(ngModel)]="userDetail.emailId" required>
+                    <div *ngIf="regForm.get('uname').touched&&regForm.get('uname').hasError('required')" style="color: red;">Please Enter UserName</div>
+                    <div *ngIf="regForm.get('uname').touched&&regForm.get('uname').hasError('minlength')" style="color: red;">UserName is Minimum 8 Characters Required</div>
+                  </div>
+                  <div class="form-group mb-2">
+                    <label for="user-password">Password</label>
+                    <input type="password" class="form-control" id="adminPassword" formControlName="password" name="adminPassword" [(ngModel)]="userDetail.password" placeholder="Enter password" required>
+                    <div *ngIf="regForm.get('password').touched&&regForm.get('password').hasError('minlength')" style="color: red;">Password is Minimum 8 Characters Required
+                    </div>
+                  </div>
+                  <button type="submit" (click)="userLogin()" class="btn btn-primary btn-block">Login</button>
+                  <div class="card" >
+                    <div class="overlay" *ngIf = "show">
+                    <div class="content" style="background-color:rgb(236, 231, 231);">
+                       <img src="/assets/success.jpg" alt="">
+                       <h2 style="text-align: center;">Thank You!</h2> 
+                        <p>User Login Successfully <br>{{data.name}}Thanks!</p>
+                         <button style="display: flex; justify-content: center;"  routerLink="/cardList"  routerLinkActive="active"  class="nav-link"  class="btn btn-success" (click)="show = false">OK</button>
+                            </div>
+                    </div>
+                </div>
+                </form>
+                <hr>
+                <p class="text-center">Want to login as a Admin? <a routerLink="/admin">Click here</a></p>
+                <p class="text-center">new User? <a routerLink="/addUser">Click here</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+</body>

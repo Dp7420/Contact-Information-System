@@ -1,0 +1,31 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center mb-4">Update Categories Data</h2>
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="categories.categoryName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group mb-4">
+            <label for="email">shortName</label>
+            <input type="text" class="form-control" id="shortName" name="shortName" [(ngModel)]="categories.shortName" placeholder="Enter your email" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>&nbsp;&nbsp;
+          <button  class="btn btn-info" routerLink="/categoryList" routerLinkActive="active">Back</button>
+          <div class="card" >
+            <div class="overlay" *ngIf = "show">
+            <div class="content" style="background-color:rgb(236, 231, 231);">
+               <img src="/assets/success.jpg" alt="">
+               <h2 style="text-align: center;">Thank You!</h2> 
+                <p>Your details has been updated Successfully <br>Thanks!</p>
+                 <button style="display: flex; justify-content: center;"  routerLink="/cardList"  routerLinkActive="active"  class="nav-link"  class="btn btn-success" (click)="show = false">OK</button>
+                    </div>
+            </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,96 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2 class="text-center mb-4">Card Registration</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- <div class="mb-3">
+                    <label for="name" class="form-label">CardType</label>
+                    <select name="cardType" class="form-control">
+                        <option>--select--</option>
+                        <option *ngFor="let cardT of cardType" value="{{cardT.id}}">
+                            {{cardT.name}}
+                        </option>
+                    </select> -->
+                   
+                    <!-- <input type="select" class="form-control" id="cardType" placeholder="Enter cardType" [(ngModel)]="cardDetail.cardType" name="cardType"> -->
+                <!-- </div> -->
+                <div class="mb-3">
+                    <label for="cardType" class="form-label">Card Type</label>
+                    <select name="cardType" class="form-control" [(ngModel)]="cardDetail.cardType">
+                        <option value="">-- Select --</option>
+                        <option *ngFor="let cardT of cardType" [value]="cardT.name">{{cardT.name}}</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label ">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" [(ngModel)]="cardDetail.name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">companyName</label>
+                    <input type="text" class="form-control" id="companyName" placeholder="Enter companyName" [(ngModel)]="cardDetail.companyName" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter Address" [(ngModel)]="cardDetail.address" name="address">
+                </div>
+                <div class="mb-3">
+                    <label for="emaiId" class="form-label">Email ID</label>
+                    <input type="text" class="form-control" id="emaiId" placeholder="Enter Email ID" [(ngModel)]="cardDetail.emaiId" name="emaiId">
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Designation</label>
+                    <input type="text" class="form-control" id="designation" placeholder="designation" [(ngModel)]="cardDetail.designation" name="designation">
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label">Department</label>
+                    <input type="text" class="form-control" id="department" placeholder="Enter department" [(ngModel)]="cardDetail.department" name="department">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="mobileNumber" class="form-label">Mobile Number</label>
+                    <input type="text" class="form-control" id="mobileNumber" placeholder="Enter Mobile Number" [(ngModel)]="cardDetail.mobileNumber" name="mobileNumber">
+                </div>
+                <div class="mb-3">
+                    <label for="fax" class="form-label">Fax</label>
+                    <input type="text" class="form-control" id="fax" placeholder="Enter Fax" [(ngModel)]="cardDetail.fax" name="fax">
+                </div>
+                <div class="mb-3">
+                    <label for="officeEmailId" class="form-label">Office Email ID</label>
+                    <input type="text" class="form-control" id="officeEmailId" placeholder="Enter Office Email ID" [(ngModel)]="cardDetail.officeEmailId" name="officeEmailId">
+                </div>
+                <div class="mb-3">
+                    <label for="residentialNumber" class="form-label">Residential Number</label>
+                    <input type="text" class="form-control" id="residentialNumber" placeholder="Enter residential Number" [(ngModel)]="cardDetail.residentialNumber" name="residentialNumber">
+                </div>
+                <div class="mb-3">
+                    <label for="officeWebsite" class="form-label">Office Website</label>
+                    <input type="text" class="form-control" id="officeWebsite" placeholder="Enter Office Website" [(ngModel)]="cardDetail.officeWebSite" name="officeWebsite">
+                </div>
+                <div class="mb-3">
+                    <label for="branches" class="form-label">Branches</label>
+                    <input type="text" class="form-control" id="branches" placeholder="Enter Branches" [(ngModel)]="cardDetail.branches" name="branches">                </div>
+                <div class="mb-3">
+                    <label for="partner" class="form-label">Partner</label>
+                    <input type="text" class="form-control" id="partner" placeholder="Enter Partner" [(ngModel)]="cardDetail.partner" name="partner">
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-info">Submit</button>&nbsp;&nbsp;
+            <button class="btn btn-primary" type="button" routerLink="/cardList" routerLinkActive="active">Back</button>
+            </div>
+            <div class="card" >
+                <div class="overlay" *ngIf = "show">
+                <div class="content" style="background-color:rgb(236, 231, 231);">
+                   <img src="/assets/success.jpg" alt="">
+                   <h2 style="text-align: center;">Thank You!</h2> 
+                    <p>Your details has been Successfully <br>Submitted.Thanks!</p>
+                     <button style="display: flex; justify-content: center;"  routerLink="/cardList"  routerLinkActive="active"  class="nav-link"  class="btn btn-success" (click)="show = false">OK</button>
+                        </div>
+                </div>
+            </div>
+    </form>
+
+</div>

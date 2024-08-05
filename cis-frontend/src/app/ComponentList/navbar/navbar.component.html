@@ -1,0 +1,77 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <div class="container-fluid">
+    <button type="button" class="btn btn-info" (click)="toggleSidebar()">Menu</button>
+    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false"> Welcome,
+            <i class="fa fa-user"></i> {{store}}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item text-dark"  (click)="changePassword()">Change Password</a></li>
+          <!-- </ul> -->
+          <!-- <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown"> -->
+            <li><a class="dropdown-item text-danger" href="#" (click)="logout()">Logout</a></li>
+          </ul>
+        <!-- </li> -->
+      <!-- </ul> -->
+  </div>
+  <!-- <div class="container"> -->
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+      <!-- <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false"> Welcome,
+            <i class="fa fa-user"></i> {{store.name}}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item text-dark" (click)="changePassword()">Change Password</a></li> -->
+          <!-- </ul> -->
+          <!-- <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown"> -->
+            <!-- <li><a class="dropdown-item text-danger" href="#" (click)="logout()">Logout</a></li>
+          </ul>
+        </li>
+      </ul> -->
+    <!-- </div> -->
+  <!-- </div> -->
+</nav>
+
+<div>
+  
+  <div [ngClass]="{ 'd-none': !isSidebarVisible }" class="sidebar shadow bg-secondary">
+    <div class="p-3">
+      <div class="position-relative bg-dark">
+       <a class="position-absolute top-50 start-50 translate-middle text-white"><i class="fa fa-user"></i>&nbsp; {{store}}</a>
+       <pre>
+
+
+       </pre>
+      </div>
+      <nav class="mb-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-light" aria-current="page" href="/home"><i class="fa-solid fa-house"></i>&nbsp;Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/userDetails"><i class="fa-solid fa-user"></i>&nbsp;Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/categoryList"><i class="fa-solid fa-list"></i>&nbsp;Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/cardList"><i class="fa-regular fa-id-card"></i>&nbsp;CardDetails</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/companyList"><i class="fa-solid fa-building"></i>&nbsp;CompanyDetails</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/organizationList"><i class="fa-solid fa-sitemap"></i>&nbsp;Organization Information</a>
+        </ul>
+      </nav>
+      <button type="button" class="btn btn-info btn-block" (click)="hideSidebar()">Close Sidebar</button>
+    </div>
+  </div>
+</div>

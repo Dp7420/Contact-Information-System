@@ -1,0 +1,129 @@
+<div class="container">
+    <h2 class="text-center mb-4">Update Organization Information</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="organizationName" class="form-label">Organization Name</label>
+                    <input type="text" class="form-control" id="organizationName" placeholder="Enter Organization Name" [(ngModel)]="organization.organizationName" name="organizationname">
+                </div>
+                <div class="mb-3">
+                    <label for="address1" class="form-label">Address 1</label>
+                    <input type="text" class="form-control" id="address1" placeholder="Enter Address 1" [(ngModel)]="organization.address1" name="address1">
+                </div>
+                <div class="mb-3">
+                    <label for="address2" class="form-label">Address 2</label>
+                    <input type="text" class="form-control" id="address2" placeholder="Enter Address 2" [(ngModel)]="organization.address2" name="address2">
+                </div>
+                <div class="mb-3">
+                    <label for="place" class="form-label">Place</label>
+                    <input type="text" class="form-control" id="place" placeholder="Enter Place" [(ngModel)]="organization.place" name="place">
+                </div>
+                <div class="mb-3">
+                    <label for="pinCode" class="form-label">Pincode</label>
+                    <input type="text" class="form-control" id="pinCode" placeholder="Enter Pincode" [(ngModel)]="organization.pinCode" name="pinCode">
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNo" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNo" placeholder="Enter Phone Number" [(ngModel)]="organization.phoneNo" name="phoneNo">
+                </div>
+                <div class="mb-3">
+                    <label for="teleEx" class="form-label">Tele Ex</label>
+                    <input type="text" class="form-control" id="teleEx" placeholder="Enter Tele Ex" [(ngModel)]="organization.teleEx" name="teleEx">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter Email" [(ngModel)]="organization.email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="logo" class="form-label">Logo</label>
+                    <input type="text" class="form-control" id="logo" placeholder="Enter Logo" [(ngModel)]="organization.logo" name="logo">
+                </div>
+                <div class="mb-3">
+                    <label for="TDSAccount" class="form-label">TDS Account</label>
+                    <input type="text" class="form-control" id="TDSAccount" placeholder="Enter TDS Account" [(ngModel)]="organization.tdsaccount" name="TDSAccount">
+                </div>
+                <div class="mb-3">
+                    <label for="PANGIR" class="form-label">PANGIR</label>
+                    <input type="text" class="form-control" id="PANGIR" placeholder="Enter PANGIR" [(ngModel)]="organization.pangir" name="PANGIR">
+                </div>
+                <div class="mb-3">
+                    <label for="PANEXT" class="form-label">PANEXT</label>
+                    <input type="text" class="form-control" id="PANEXT" placeholder="Enter PANEXT" [(ngModel)]="organization.panext" name="PANEXT">
+                </div>
+                <div class="mb-3">
+                    <label for="fax" class="form-label">Fax No</label>
+                    <input type="text" class="form-control" id="fax" placeholder="Enter Fax No" [(ngModel)]="organization.fax" name="fax">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="dateOfReg" class="form-label">Date of Registration</label>
+                    <input type="date" class="form-control" id="dateOfReg" placeholder="Enter Date of Registration" [(ngModel)]="organization.dateOfReg" name="dateOfReg">
+                </div>
+                <div class="mb-3">
+                    <label for="grams" class="form-label">Grams</label>
+                    <input type="text" class="form-control" id="grams" placeholder="Enter Grams" [(ngModel)]="organization.grams" name="grams">
+                </div>
+                <div class="mb-3">
+                    <label for="inceptionDate" class="form-label">Inception Date</label>
+                    <input type="date" class="form-control" id="inceptionDate" placeholder="Enter Inception Date" [(ngModel)]="organization.inceptionDate" name="inceptionDate">
+                </div>
+                <div class="mb-3">
+                    <label for="CSTNo" class="form-label">CST No</label>
+                    <input type="text" class="form-control" id="CSTNo" placeholder="Enter CST No" [(ngModel)]="organization.cstno" name="CSTNo">
+                </div>
+                <div class="mb-3">
+                    <label for="GSTNo" class="form-label">GST No</label>
+                    <input type="text" class="form-control" id="GSTNo" placeholder="Enter GST No" [(ngModel)]="organization.gstno" name="GSTNo">
+                </div>
+                <div class="mb-3">
+                    <label for="CECode" class="form-label">CE Code</label>
+                    <input type="text" class="form-control" id="CECode" placeholder="Enter CE Code" [(ngModel)]="organization.cecode" name="CECode">
+                </div>
+                <div class="mb-3">
+                    <label for="CERNo" class="form-label">CER No</label>
+                    <input type="text" class="form-control" id="CERNo" placeholder="Enter CER No" [(ngModel)]="organization.cerno" name="CERNo">
+                </div>
+                <div class="mb-3">
+                    <label for="DRCLNo" class="form-label">DRCL No</label>
+                    <input type="text" class="form-control" id="DRCLNo" placeholder="Enter DRCL No" [(ngModel)]="organization.drclno" name="DRCLNo">
+                </div>
+                <div class="mb-3">
+                    <label for="FormDate" class="form-label">Form Date</label>
+                    <input type="date" class="form-control" id="FormDate" placeholder="Enter Form Date" [(ngModel)]="organization.formDate" name="FormDate">
+                </div>
+                <div class="mb-3">
+                    <label for="EXIMCode" class="form-label">EXIM Code</label>
+                    <input type="text" class="form-control" id="EXIMCode" placeholder="Enter EXIM Code" [(ngModel)]="organization.eximcode" name="EXIMCode">
+                </div>
+                <div class="mb-3">
+                    <label for="CSTRate" class="form-label">CST Rate</label>
+                    <input type="number" class="form-control" id="CSTRate" placeholder="Enter CST Rate" [(ngModel)]="organization.cstrate" name="CSTRate">
+                </div>
+                <div class="mb-3">
+                    <label for="GSTRate" class="form-label">GST Rate</label>
+                    <input type="number" class="form-control" id="GSTRate" placeholder="Enter GST Rate" [(ngModel)]="organization.gstrate" name="GSTRate">
+                </div>
+                <div class="mb-3">
+                    <label for="ExciseDutyRate" class="form-label">Excise Duty Rate</label>
+                    <input type="number" class="form-control" id="ExciseDutyRate" placeholder="Enter Excise Duty Rate" [(ngModel)]="organization.exciseDutyRate" name="ExciseDutyRate">
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+            <button type="submit"  class="btn btn-info" routerLink="/organizationList" routerLinkActive="active">Back</button>
+        </div>
+        <div class="card" >
+            <div class="overlay" *ngIf = "show">
+            <div class="content" style="background-color:rgb(236, 231, 231);">
+               <img src="/assets/success.jpg" alt="">
+               <h2 style="text-align: center;">Thank You!</h2> 
+                <p>Your details has been updated Successfully <br>Thanks!</p>
+                 <button style="display: flex; justify-content: center;"  routerLink="/cardList"  routerLinkActive="active"  class="nav-link"  class="btn btn-success" (click)="show = false">OK</button>
+                    </div>
+            </div>
+        </div>
+    </form>
+</div>
